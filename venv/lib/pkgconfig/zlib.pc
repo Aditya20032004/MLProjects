@@ -1,0 +1,13 @@
+prefix=/home/arsenal/ml/MLprojects_start/venv
+exec_prefix=/home/arsenal/ml/MLprojects_start/venv
+libdir=/home/arsenal/ml/MLprojects_start/venv/lib
+sharedlibdir=/home/arsenal/ml/MLprojects_start/venv/lib
+includedir=/home/arsenal/ml/MLprojects_start/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
