@@ -21,7 +21,7 @@ class DataIngestion:
     
     def initiate_data_ingestion(self):
         logging.info("Data Ingestion initiated")
-        try:
+        try:        
             df = pd.read_csv('notebooks/data/stud.csv')
             logging.info("Raw data loaded successfully")
             
