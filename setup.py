@@ -6,13 +6,13 @@ Hyphen_e_dot = '-e .'
 def get_requirements(filename:str)->List[str]:
     '''will return list of requirements
     '''
-    reuirements = []
+    requirements = []
     with open(filename) as file_obj:
         requirements = file_obj.readlines()
         requirements = [req.replace("\n","") for req in requirements]
-        if Hyphen_e_dot in reuirements:
+        if Hyphen_e_dot in requirements:
             requirements.remove(Hyphen_e_dot)
-    return reuirements
+    return requirements
 setup(
     name='ml_project',
     version = '3.12.7',

@@ -3,5 +3,12 @@ Name: ml_project
 Version: 3.12.7
 Author: Aditya
 Author-email: ag82620790@gmail.com
+Requires-Dist: pandas
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
 Dynamic: author
 Dynamic: author-email
+Dynamic: requires-dist

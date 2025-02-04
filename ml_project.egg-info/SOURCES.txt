@@ -3,5 +3,16 @@ setup.py
 ml_project.egg-info/PKG-INFO
 ml_project.egg-info/SOURCES.txt
 ml_project.egg-info/dependency_links.txt
+ml_project.egg-info/requires.txt
 ml_project.egg-info/top_level.txt
 src/__init__.py
+src/exception.py
+src/logger.py
+src/utils.py
+src/components/__init__.py
+src/components/data_ingestion.py
+src/components/data_transformation.py
+src/components/model_trainer.py
+src/pipeline/__init__.py
+src/pipeline/predict_ppipeline.py
+src/pipeline/train_pipeline.py
