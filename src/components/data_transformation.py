@@ -35,20 +35,21 @@ class DataTransformation:
             numeric_features = ['writing_score', 'reading_score']
             categorical_columns = [
                 'gender',
-                "race_ethinicity",
+                "race_ethnicity",
                 "parental_level_of_education",
                 "lunch",
                 "test_preparation_course",
             ]
             numeric_transformer = Pipeline(steps=[
                 ('imputer', SimpleImputer(strategy='median')),           # handling missing values
-                ('scaler', StandardScaler())]
+                ('scaler', StandardScaler(with_mean=False))]             # standard scaling (mean=0, variance=1)
                                            )
             
             categorical_transformer = Pipeline(steps=[
                 ('imputer', SimpleImputer(strategy='most_frequent')), # handling missing values
-                ('onehot', OneHotEncoder(handle_unknown='ignore'))
-                ("scaler",StandardScaler())]                                               
+                ("onehot", OneHotEncoder()),
+                ("scaler",StandardScaler(with_mean=False))            # standard scaling (mean=0, variance=1
+                ]                                               
                                                )
             logging.info("numerical_features standard scaling done")
             logging.info("categorical_columns encoding done")

@@ -9,6 +9,9 @@ import numpy as np
 from sklearn.model_selection import train_test_split # type: ignore
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import datatransformationconfig
+
 @dataclass
 class dataingestionconfig:
     train_data_path: str=os.path.join('artifacts',"train.csv")
@@ -44,4 +47,6 @@ class DataIngestion:
             raise CustomException(e,sys)
 
 if __name__=="__main__":
-    DataIngestion().initiate_data_ingestion()
+    train_data, tets_data = DataIngestion().initiate_data_ingestion()
+    data_transformer = DataTransformation()
+    data_transformer.initiate_data_transformation(train_data, tets_data)
