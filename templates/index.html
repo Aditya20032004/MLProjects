@@ -7,9 +7,32 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #121212;
+            background: url('https://miro.medium.com/v2/resize:fit:828/format:webp/0*s6JTB-lNULLGP3iH') no-repeat center center fixed;
+            background-size: cover;
             color: #e0e0e0;
             margin: 0;
             padding: 0;
@@ -17,14 +40,19 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .container {
             text-align: center;
-            background: #1e1e1e;
+            background: rgba(30, 30, 30, 0.7);
+            /* Adjusted transparency */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            animation: slideIn 1s ease-in-out;
         }
 
         h1 {
@@ -41,6 +69,12 @@
         p {
             color: #b0b0b0;
         }
+
+        img {
+            margin-top: 20px;
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
     </style>
 </head>
 
@@ -49,6 +83,12 @@
         <i class="fas fa-home icon"></i>
         <h1>Welcome to the Home Page</h1>
         <p>This project workspace is located in the folder <strong>MLProjects_start</strong> on your local system.</p>
+    </div>
+    <div class="container">
+        <i class="fas fa-robot icon"></i>
+        <h1>Machine Learning Projects</h1>
+        <p>Explore various machine learning projects and enhance your skills.</p>
+        <img src="https://via.placeholder.com/150" alt="ML Project Image">
     </div>
 </body>
 
