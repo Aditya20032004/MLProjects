@@ -11,6 +11,7 @@ Requires-Dist: scikit-learn
 Requires-Dist: scipy
 Requires-Dist: catboost
 Requires-Dist: xgboost
+Requires-Dist: flask
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist

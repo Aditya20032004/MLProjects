@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Performance Indicator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #343a40;
+            color: #f8f9fa;
+        }
+
+        .login {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #495057;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login h1,
+        .login h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .login h1 {
+            font-size: 24px;
+        }
+
+        .login h2 {
+            font-size: 20px;
+            color: #28a745;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            width: 100%;
+        }
+
+        .project-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ced4da;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <h1>Student Exam Performance Indicator</h1>
+        <form action="{{ url_for('predict_datapoint') }}" method="post">
+            <fieldset>
+                <legend>Student Exam Performance Prediction</legend>
+                <div class="form-group">
+                    <label class="form-label">Gender</label>
+                    <select class="form-control" name="gender" required>
+                        <option selected disabled value="">Select your Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Race or Ethnicity</label>
+                    <select class="form-control" name="ethnicity" required>
+                        <option selected disabled value="">Select Ethnicity</option>
+                        <option value="group A">Group A</option>
+                        <option value="group B">Group B</option>
+                        <option value="group C">Group C</option>
+                        <option value="group D">Group D</option>
+                        <option value="group E">Group E</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Parental Level of Education</label>
+                    <select class="form-control" name="parental_level_of_education" required>
+                        <option selected disabled value="">Select Parent Education</option>
+                        <option value="associate's degree">Associate's degree</option>
+                        <option value="bachelor's degree">Bachelor's degree</option>
+                        <option value="high school">High school</option>
+                        <option value="master's degree">Master's degree</option>
+                        <option value="some college">Some college</option>
+                        <option value="some high school">Some high school</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Lunch Type</label>
+                    <select class="form-control" name="lunch" required>
+                        <option selected disabled value="">Select Lunch Type</option>
+                        <option value="free/reduced">Free/Reduced</option>
+                        <option value="standard">Standard</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Test Preparation Course</label>
+                    <select class="form-control" name="test_preparation_course" required>
+                        <option selected disabled value="">Select Test Course</option>
+                        <option value="none">None</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Writing Score out of 100</label>
+                    <input class="form-control" type="number" name="writing_score"
+                        placeholder="Enter your Writing Score" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Reading Score out of 100</label>
+                    <input class="form-control" type="number" name="reading_score"
+                        placeholder="Enter your Reading Score" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Predict your Maths Score">
+                </div>
+            </fieldset>
+        </form>
+        <h2>THE prediction is {{results}}</h2>
+        <div class="project-info">
+            <p>This project workspace is located in the folder <strong>MLProjects_start</strong> on your local system.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
