@@ -9,6 +9,8 @@ Requires-Dist: matplotlib
 Requires-Dist: numpy
 Requires-Dist: scikit-learn
 Requires-Dist: scipy
+Requires-Dist: catboost
+Requires-Dist: xgboost
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist

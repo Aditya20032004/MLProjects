@@ -11,6 +11,9 @@ from dataclasses import dataclass
 
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import datatransformationconfig
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+
 
 @dataclass
 class dataingestionconfig:
@@ -47,6 +50,9 @@ class DataIngestion:
             raise CustomException(e,sys)
 
 if __name__=="__main__":
-    train_data, tets_data = DataIngestion().initiate_data_ingestion()
+    train_data, test_data = DataIngestion().initiate_data_ingestion()
+    print(train_data, test_data)
     data_transformer = DataTransformation()
-    data_transformer.initiate_data_transformation(train_data, tets_data)
+    train_array, test_array,preprocesoor_path = data_transformer.initiate_data_transformation(train_data, test_data)
+    model_trainer = ModelTrainer()
+    print(model_trainer.initaiate_model_training(train_array,test_array))
