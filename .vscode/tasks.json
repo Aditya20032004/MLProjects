@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "install-setuptools",
+			"command": "pip",
+			"args": [
+				"install",
+				"--upgrade",
+				"setuptools"
+			],
+			"presentation": {
+				"reveal": "silent"
+			}
+		}
+	]
+}

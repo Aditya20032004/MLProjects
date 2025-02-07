@@ -6,12 +6,12 @@ Author-email: ag82620790@gmail.com
 Requires-Dist: pandas
 Requires-Dist: seaborn
 Requires-Dist: matplotlib
-Requires-Dist: numpy
 Requires-Dist: scikit-learn
 Requires-Dist: scipy
-Requires-Dist: catboost
 Requires-Dist: xgboost
 Requires-Dist: flask
+Requires-Dist: numpy
+Requires-Dist: catboost
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist

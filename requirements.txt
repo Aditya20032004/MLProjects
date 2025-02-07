@@ -1,10 +1,10 @@
 pandas
 seaborn
 matplotlib
-numpy
 scikit-learn
 scipy
-catboost
 xgboost
 flask
+numpy
+catboost
 -e .
